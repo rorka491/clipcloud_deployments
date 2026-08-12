@@ -7,7 +7,5 @@ class GeneralProvider(Provider):
 
     @provide(scope=Scope.APP)
     def bot(self) -> Bot:
-        custom_server = TelegramAPIServer.from_base(
-            "https://quiet-bush-1418.rodion-gorshkov-456.workers.dev"
-        )
+        custom_server = TelegramAPIServer.from_base(settings.telegram_api_url)
         return Bot(token=settings.bot_access_token, server=custom_server)

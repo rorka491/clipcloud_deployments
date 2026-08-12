@@ -23,6 +23,9 @@ class Settings(BaseSettings):
 
     github_webhook_secret: str
 
+    telegram_api_url: str
+
+
     @property
     def redis_url(self) -> str:
         return (
